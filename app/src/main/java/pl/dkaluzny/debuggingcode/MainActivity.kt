@@ -1,10 +1,9 @@
 package pl.dkaluzny.debuggingcode
 
-import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,4 +17,9 @@ class MainActivity : Activity() {
     fun add(firstNum: Int, secondNum: Int) {
         println("Sum is: ${firstNum + secondNum}")
     }
+
+    
+
+
+
 }
