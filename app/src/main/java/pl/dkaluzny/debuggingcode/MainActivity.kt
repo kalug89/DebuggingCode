@@ -2,6 +2,7 @@ package pl.dkaluzny.debuggingcode
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,17 +10,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        add(10, 12)
     }
 
-    //Todo: Write new function
-    //Todo: Write more function
-    fun add(firstNum: Int, secondNum: Int) {
-        println("Sum is: ${firstNum + secondNum}")
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "OnPause Started", Toast.LENGTH_LONG).show()
     }
 
-    
+    override fun onPostResume() {
+        super.onPostResume()
+        Toast.makeText(this, "OnPostResume Started", Toast.LENGTH_LONG).show()
+    }
 
+    override fun onDestroy() {
+        Toast.makeText(this, "OnDestroy Started", Toast.LENGTH_LONG).show()
+        super.onDestroy()
+    }
 
+    override fun onStart() {
+        Toast.makeText(this, "OnStart Started", Toast.LENGTH_LONG).show()
+        super.onStart()
+    }
 
+    override fun onStop() {
+        Toast.makeText(this, "OnStop Started", Toast.LENGTH_LONG).show()
+        super.onStop()
+    }
 }
